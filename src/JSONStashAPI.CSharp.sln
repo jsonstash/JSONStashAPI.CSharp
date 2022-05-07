@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSONStashAPI.CSharp", "JSONStashAPI.CSharp\JSONStashAPI.CSharp.csproj", "{5AC57B4F-9E82-4C12-930F-E95778005CDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSONStashAPI.CSharp.Test", "JSONStashAPI.CSharp.Test\JSONStashAPI.CSharp.Test.csproj", "{A465C2EA-22C0-4ACB-8DBA-87272969D9FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5AC57B4F-9E82-4C12-930F-E95778005CDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AC57B4F-9E82-4C12-930F-E95778005CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AC57B4F-9E82-4C12-930F-E95778005CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AC57B4F-9E82-4C12-930F-E95778005CDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A465C2EA-22C0-4ACB-8DBA-87272969D9FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A465C2EA-22C0-4ACB-8DBA-87272969D9FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A465C2EA-22C0-4ACB-8DBA-87272969D9FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A465C2EA-22C0-4ACB-8DBA-87272969D9FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9154E6B0-79F8-4D34-98A9-5ECA475A7A1D}
+	EndGlobalSection
+EndGlobal

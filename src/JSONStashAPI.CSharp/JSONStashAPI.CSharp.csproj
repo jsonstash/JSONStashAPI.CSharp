@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageId>JSONStashAPI.CSharp</PackageId>
+		<Version Condition=" '$(BUILD_ID)' != '' AND $(RELEASE_NUMBER) != ''">$(RELEASE_NUMBER).$(BUILD_ID)</Version>
+		<Version Condition=" '$(BUILD_ID)' == '' OR $(RELEASE_NUMBER) == ''">0.0.1</Version>
+		<Authors>JSONStash Team</Authors>
+		<Product>JSONStash</Product>
+		<Description>This library takes what the JSONStash api returns in JSON, and converts it to C# objects for easy interaction with in C# projects.</Description>
+		<PackageProjectUrl></PackageProjectUrl>
+		<PackageIcon></PackageIcon>
+		<RepositoryUrl>https://github.com/jsonstash/JSONStash.SDK.CSharp</RepositoryUrl>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	</ItemGroup>
+
+</Project>
