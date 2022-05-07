@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
@@ -13,7 +13,7 @@
 		<Description>This library takes what the JSONStash api returns in JSON, and converts it to C# objects for easy interaction with in C# projects.</Description>
 		<PackageProjectUrl></PackageProjectUrl>
 		<PackageIcon></PackageIcon>
-		<RepositoryUrl>https://github.com/jsonstash/JSONStash.SDK.CSharp</RepositoryUrl>
+		<RepositoryUrl>https://github.com/jsonstash/JSONStashAPI.CSharp</RepositoryUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
