@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace JSONStashAPI.CSharp
 {
-    public class JSONStashAPI : IJSONStashAPI
+    public class JSONStash : IJSONStash
     {
         private readonly Uri _host;
 
@@ -17,7 +17,7 @@ namespace JSONStashAPI.CSharp
         /// <param name="host"></param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="UriFormatException"></exception>
-        public JSONStashAPI(string host)
+        public JSONStash(string host)
         {
             string pattern = @"^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$";
 

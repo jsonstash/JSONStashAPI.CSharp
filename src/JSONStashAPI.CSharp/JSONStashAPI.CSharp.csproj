@@ -6,14 +6,12 @@
 		<Nullable>disable</Nullable>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageId>JSONStashAPI.CSharp</PackageId>
-		<Version Condition=" '$(BUILD_ID)' != '' AND $(RELEASE_NUMBER) != ''">$(RELEASE_NUMBER).$(BUILD_ID)</Version>
-		<Version Condition=" '$(BUILD_ID)' == '' OR $(RELEASE_NUMBER) == ''">0.0.1</Version>
 		<Authors>JSONStash Team</Authors>
-		<Product>JSONStash</Product>
+		<Product>JSONStashAPI.CSharp</Product>
+		<Owner>jsonstash</Owner>
 		<Description>This library takes what the JSONStash api returns in JSON, and converts it to C# objects for easy interaction with in C# projects.</Description>
-		<PackageProjectUrl></PackageProjectUrl>
-		<PackageIcon></PackageIcon>
 		<RepositoryUrl>https://github.com/jsonstash/JSONStashAPI.CSharp</RepositoryUrl>
+		<Version>3.0.0</Version>
 	</PropertyGroup>
 
 	<ItemGroup>

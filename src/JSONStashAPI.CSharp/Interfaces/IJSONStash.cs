@@ -1,6 +1,6 @@
 ﻿namespace JSONStashAPI.CSharp.Interfaces
 {
-    public interface IJSONStashAPI : IStash
+    public interface IJSONStash : IStash
     {
     }
 }
