@@ -1,21 +1,11 @@
 ﻿namespace JSONStashAPI.CSharp.Models
 {
-    public class StashData
+    public class StashMetadata
     {
-        /// <summary>
-        /// Name of stash.
-        /// </summary>
-        public string Name { get; set; }
-
         /// <summary>
         /// Stored JSON for stash.
         /// </summary>
-        public string Data { get; set; }
-
-        /// <summary>
-        /// Any message returned by the api.
-        /// </summary>
-        public string Message { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Date and time when the stash was created.
@@ -36,5 +26,10 @@
         /// The identifier of the collection.
         /// </summary>
         public Guid CollectionId { get; set; }
+
+        /// <summary>
+        /// The current quota the stash is using.
+        /// </summary>
+        public StashQuota Quota { get; set; }
     }
 }
