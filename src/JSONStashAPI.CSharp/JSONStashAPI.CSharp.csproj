@@ -11,7 +11,7 @@
 		<Owner>jsonstash</Owner>
 		<Description>This library takes what the JSONStash api returns in JSON, and converts it to C# objects for easy interaction with in C# projects.</Description>
 		<RepositoryUrl>https://github.com/jsonstash/JSONStashAPI.CSharp</RepositoryUrl>
-		<Version>3.0.0</Version>
+		<Version>1.0.0</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
