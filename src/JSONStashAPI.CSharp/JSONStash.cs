@@ -2,6 +2,7 @@
 using JSONStashAPI.CSharp.Models;
 using Newtonsoft.Json;
 using System;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -10,31 +11,39 @@ namespace JSONStashAPI.CSharp
     public class JSONStash : IJSONStash
     {
         private readonly Uri _host;
+        private readonly int? _port;
 
         /// <summary>
         /// Takes what the JSONStash api returns in JSON, and converts it to C# objects for easy interaction with in C# projects.
         /// </summary>
         /// <param name="host"></param>
+        /// /// <param name="port"></param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="UriFormatException"></exception>
-        public JSONStash(string host)
+        public JSONStash(string host, int? port = null)
         {
             string pattern = @"^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$";
 
             if (string.IsNullOrEmpty(host))
                 throw new ArgumentNullException($"Value cannot be null. Parameter name: \"host\"");
 
-            
             Regex regex = new(pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            
+            bool isValidUrl = regex.IsMatch(host);
 
-            bool validFormat = regex.IsMatch(host);
 
-            bool validUri = Uri.TryCreate(host, UriKind.Absolute, out Uri uri) && (uri.Scheme == Uri.UriSchemeHttp || uri.Scheme == Uri.UriSchemeHttps);
+            bool isValidUri = (Uri.TryCreate(host, UriKind.Absolute, out _host) 
+                                || Uri.TryCreate("http://" + host, UriKind.RelativeOrAbsolute, out _host)) 
+                                && (_host.Scheme == Uri.UriSchemeHttp || _host.Scheme == Uri.UriSchemeHttps);
 
-            if (!validUri && !validFormat)
+            if (port != null && isValidUri)
+            {
+                UriBuilder builder = new(_host) {  Port = port.Value};
+                _host = builder.Uri;
+            }
+
+            if (!isValidUri || !isValidUrl)
                 throw new UriFormatException("The provided host is not properly formatted.");
-
-            _host = uri;
         }
 
         public async Task<StashData> GetStashDataAsync(string key, string stashId)
