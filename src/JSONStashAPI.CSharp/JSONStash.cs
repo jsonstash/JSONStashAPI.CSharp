@@ -46,7 +46,7 @@ namespace JSONStashAPI.CSharp
                 throw new UriFormatException("The provided host is not properly formatted.");
         }
 
-        public async Task<StashData> GetStashDataAsync(string key, string stashId)
+        public async Task<StashResponse> GetStashDataAsync(string key, string stashId)
         {
             if (string.IsNullOrEmpty(key) && string.IsNullOrEmpty(stashId))
                 throw new ArgumentNullException($"Value cannot be null. Parameter names: [\"key\", \"stashId\"]");
@@ -62,13 +62,13 @@ namespace JSONStashAPI.CSharp
             {
                 string json = await response.Content.ReadAsStringAsync();
 
-                return JsonConvert.DeserializeObject<StashData>(json);
+                return JsonConvert.DeserializeObject<StashResponse>(json);
             }
 
             return null;
         }
 
-        public async Task<StashData> UpdateStashDataAsync(string key, string stashId, string data)
+        public async Task<StashResponse> UpdateStashDataAsync(string key, string stashId, string data)
         {
             if (string.IsNullOrEmpty(key) && string.IsNullOrEmpty(stashId) && string.IsNullOrEmpty(data))
                 throw new ArgumentNullException($"Value cannot be null. Parameter names: [\"key\", \"stashId\", \"data\"]");
@@ -86,7 +86,7 @@ namespace JSONStashAPI.CSharp
             {
                 string json = await response.Content.ReadAsStringAsync();
 
-                return JsonConvert.DeserializeObject<StashData>(json);
+                return JsonConvert.DeserializeObject<StashResponse>(json);
             }
 
             return null;

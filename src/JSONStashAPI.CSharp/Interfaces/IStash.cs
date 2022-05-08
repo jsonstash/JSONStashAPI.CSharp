@@ -8,12 +8,12 @@ namespace JSONStashAPI.CSharp.Interfaces
         /// Get data of a stash.
         /// </summary>
         /// <returns></returns>
-        Task<StashData> GetStashDataAsync(string key, string stashId);
+        Task<StashResponse> GetStashDataAsync(string key, string stashId);
 
         /// <summary>
         /// Update data of a stash.
         /// </summary>
         /// <returns></returns>
-        Task<StashData> UpdateStashDataAsync(string key, string stashId, string json);
+        Task<StashResponse> UpdateStashDataAsync(string key, string stashId, string json);
     }
 }
